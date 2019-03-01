@@ -1,0 +1,2 @@
+- option1：pip install Django==2.1.7
+- option2：下载源码，进入根目录执行python setup.py install
