@@ -11,6 +11,7 @@
 - `python manage.py runserver`用于运行服务器
 
 ##文件夹下各模块作用
+- __init__.py：声明模块文件
 - wsgi.py：应用与服务器的网关接口
 - urls.py：url配置文件，用于配置项目中所有页面的url
 - setting.py：项目的总配置文件，包括数据库、web应用、时间等。
