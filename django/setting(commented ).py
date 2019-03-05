@@ -24,7 +24,7 @@ SECRET_KEY = 'fl^o1fg24urbgy@c8!42vhn74f98sm=6c@$m_8_n=krmd_8%9j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# 该变量用于确定是否向前端抛出异常，一般在网站上线后是关闭的
+# 该变量用于确定是否向前端抛出异常（开发人员调试时打开网站上线后关闭）
 
 ALLOWED_HOSTS = []
 # 该变量为包含允许访问网站地址的list，http://127.0.0.1:等价于localhost。
