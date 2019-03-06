@@ -19,4 +19,5 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
-#path参数（地址，响应函数，名称）
+#path参数（路径，响应函数，名称）
+#re_path参数（正则路径，响应函数，名称）
