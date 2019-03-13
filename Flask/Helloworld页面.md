@@ -40,11 +40,21 @@ port定义接口号
 ```python
 run(self, host=None, port=None, debug=None, load_dotenv=True, **options):
 ```
-## run()的参数
+## Response对象
+添加装饰器后的函数将被flask框架转化为试图函数，返回的是一个response对象
 ```python
 @app.route('/hello')
 def hello():
     return 'hello, world!'
 ```
-
-
+可以导入make_response()函数生成response对象
+并且给response.headers字段赋值如
+```python
+headers = {
+    'content-type': 'text/plain'
+    'location': 'www.baidu.com'
+}
+response = make_response('hello,world!', 301)
+response.headers = headers
+```
+通过location字段和301状态码可以实现重定向
