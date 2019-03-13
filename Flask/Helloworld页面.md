@@ -41,7 +41,7 @@ port定义接口号
 run(self, host=None, port=None, debug=None, load_dotenv=True, **options):
 ```
 ## Response对象
-添加装饰器后的函数将被flask框架转化为试图函数，返回的是一个response对象
+添加装饰器后的函数将被flask框架转化为视图函数，返回的是一个response对象
 ```python
 @app.route('/hello')
 def hello():
@@ -50,11 +50,24 @@ def hello():
 可以导入make_response()函数生成response对象
 并且给response.headers字段赋值如
 ```python
+def Hello():
 headers = {
     'content-type': 'text/plain'
     'location': 'www.baidu.com'
 }
 response = make_response('hello,world!', 301)
 response.headers = headers
+return response
 ```
 通过location字段和301状态码可以实现重定向
+## 视图函数的简化
+返回response函数并不需要如上复杂的代码编写，可以简化为：
+```python
+def Hello():
+headers = {
+    'content-type': 'text/plain'
+    'location': 'www.baidu.com'
+}
+return 'hello,world!', 301, headers
+```
+这是flask中最常用的视图函数编写方式
