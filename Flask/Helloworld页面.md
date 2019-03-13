@@ -1,5 +1,6 @@
 ## 注册一个Hello页面
-Flask的特点在于轻量级，可扩展
+Flask的特点在于轻量级，可扩展。
+采用如下最小原型即可创建一个本地helloworld页面：
 
 ```python
 from flask import Flask
@@ -33,3 +34,17 @@ def hello():
 add_url_rule('/hello', view_func=hello)
 app.run(debug=True)
 ```
+## run()的参数
+host定义网站服务器的ip地址，常采用'0.0.0.0'来表示
+port定义接口号
+```python
+run(self, host=None, port=None, debug=None, load_dotenv=True, **options):
+```
+## run()的参数
+```python
+@app.route('/hello')
+def hello():
+    return 'hello, world!'
+```
+
+
